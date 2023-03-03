@@ -2,18 +2,12 @@
 <html>
 <body>
 <form action="{{ url_for('index') }}" method="post">
-    <input type="text" name="url"> <br><br>
-    <input type="radio" id="tinyurl" name="shortener" value="tinyurl">
-    <label for="tinyurl">Tinyurl</label> <br><br>
-    <input type="radio" id="chilpit" name="shortener" value="chilpit">
-    <label for="chilpit">Chilp.it</label> <br><br>
-    <input type="radio" id="tinyurl" name="shortener" value="clckru">
-    <label for="clckru">Clck.ru</label> <br><br>
+    <input type="text" name="url"> <br> <br>
     <input type="submit" value="Submit">
 </form>
 <p> Last Shortned Url: <a href="{{ full_url }}"> {{ full_url }} </a> </p>
 <p> Last Result: <a href="{{ url }}"> {{ url }} </a> </p>
 <p> This link was shortened {{ times }} times </p>
-
+<p> <a href="https://github.com/wendyktps"> my github </a> </p>
 </body>
 </html>
