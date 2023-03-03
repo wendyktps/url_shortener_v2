@@ -37,7 +37,6 @@ def shorten_link():
     res = cur.execute(f"SELECT fullURL FROM url WHERE fullURL = '{full_url}'")
 
     if res.fetchone() is None:
-        print("DEU NONE")
         cur.execute(
             f"INSERT INTO url (fullURL, times) VALUES ('{full_url}', 0)")
         id = cur.execute(
