@@ -7,17 +7,11 @@ con = sqlite3.connect("urls.db", check_same_thread=False)
 cur = con.cursor()
 shortener = pyshorteners.Shortener()
 
-# try:
-#     cur.execute("DROP TABLE url")
-# except sqlite3.OperationalError:
-#     pass
-
-# # TIMES SHOULD BE NOT NULL
-# cur.execute('''CREATE TABLE url (
-#     id INTEGER PRIMARY KEY AUTOINCREMENT,
-#     fullURL TEXT NOT NULL,
-#     shortenURL TEXT,
-#     times INTEGER DEFAULT 0 NOT NULL)''')
+cur.execute('''CREATE TABLE if not exists url (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullURL TEXT NOT NULL,
+    shortenURL TEXT,
+    times INTEGER DEFAULT 0 NOT NULL)''')
 
 
 @app.route('/', methods=['GET', 'POST'])
