@@ -1,11 +1,9 @@
 import sqlite3
-import pyshorteners
 from flask import Flask, render_template, redirect, request
 
 app = Flask(__name__, template_folder='../templates')
 con = sqlite3.connect("urls.db", check_same_thread=False)
 cur = con.cursor()
-shortener = pyshorteners.Shortener()
 
 cur.execute('''CREATE TABLE if not exists url (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
