@@ -5,9 +5,9 @@
     <input type="text" name="url"> <br> <br>
     <input type="submit" value="Submit">
 </form>
-<p> Last Shortned Url: <a href="{{ full_url }}"> {{ full_url }} </a> </p>
-<p> Last Result: <a href="{{ url }}"> {{ url }} </a> </p>
-<p> This link was shortened {{ times }} times </p>
+<p> Last Shortned Url: <a href="{{ full_url }}"> {{ full_url or 'None :<'}} </a> </p>
+<p> Last Result: <a href="{{ url }}"> {{ url or 'None :<'}} </a> </p>
+<p> This link was shortened {{ times or 0 }} times </p>
 <p> <a href="https://github.com/wendyktps"> my github </a> </p>
 </body>
 </html>
